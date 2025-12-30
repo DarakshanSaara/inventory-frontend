@@ -10,16 +10,21 @@ const api = axios.create({
   },
 });
 
-// Request interceptor for JWT
+// Update the request interceptor in api.js
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
+    console.log(`API Request to: ${config.url}`);
+    console.log('Token available:', !!token);
+    
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
+      console.log('Authorization header set');
     }
     return config;
   },
   (error) => {
+    console.error('Request interceptor error:', error);
     return Promise.reject(error);
   }
 );
@@ -56,6 +61,7 @@ export const productApi = {
 
 export const authApi = {
   login: (credentials) => api.post('/auth/login', credentials),
+  register: (userData) => api.post('/auth/register', userData),
   logout: () => {
     localStorage.removeItem('token');
     localStorage.removeItem('isLoggedIn');

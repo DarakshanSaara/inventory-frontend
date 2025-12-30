@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { authApi } from '../services/api';
 import { toast } from 'react-hot-toast';
 import { 
@@ -19,21 +20,39 @@ const Login = () => {
   const navigate = useNavigate();
 
   // Update handleLogin function in Login.jsx
-const handleLogin = async (e) => {
+  const handleLogin = async (e) => {
   e.preventDefault();
   setLoading(true);
   
+  console.log('Login attempt with:', { username, password });
+  
   try {
     const response = await authApi.login({ username, password });
+    console.log('Full response:', response);
+    console.log('Response data:', response.data);
     
     if (response.data.token) {
+      console.log('Token found:', response.data.token.substring(0, 20) + '...');
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('userRole', response.data.role);
+      
+      // Verify storage
+      console.log('After storage:', {
+        token: localStorage.getItem('token'),
+        isLoggedIn: localStorage.getItem('isLoggedIn'),
+        userRole: localStorage.getItem('userRole')
+      });
+      
       toast.success('Login successful!');
       navigate('/dashboard');
+    } else {
+      console.error('No token in response:', response.data);
+      toast.error('Login failed: No token received');
     }
   } catch (error) {
+    console.error('Login error:', error);
+    console.error('Error response:', error.response?.data);
     toast.error(error.response?.data?.error || 'Invalid username or password');
   } finally {
     setLoading(false);
@@ -165,6 +184,15 @@ const handleLogin = async (e) => {
                   </span>
                 )}
               </button>
+
+<div className="mt-8 pt-6 border-t border-gray-200">
+  <p className="text-center text-gray-600">
+    Don't have an account?{' '}
+    <Link to="/register" className="text-indigo-600 hover:text-indigo-800 font-medium">
+      Create Account
+    </Link>
+  </p>
+</div>
             </form>
           </div>
         </div>
