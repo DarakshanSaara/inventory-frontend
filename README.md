@@ -1,70 +1,180 @@
-# Getting Started with Create React App
+# Inventory Management System - Frontend (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://img.shields.io/badge/React-18.2.0-blue
 
-## Available Scripts
+https://img.shields.io/badge/Tailwind%2520CSS-3.3.0-38B2AC
 
-In the project directory, you can run:
+https://img.shields.io/badge/Deployed%2520on-Vercel-black
 
-### `npm start`
+https://img.shields.io/badge/License-MIT-yellow
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🌐 Live Application
+Live URL: https://inventory-frontend-vert-eight.vercel.app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📱 Features Overview
+Feature	Status	Description
+✅ Dashboard	Complete	Real-time inventory analytics
+✅ Product Management	Complete	Full CRUD operations
+✅ Supplier Management	Complete	Manage supplier details
+✅ Stock Management	Complete	Stock in/out with history
+✅ Reports & Analytics	Complete	Interactive charts & graphs
+✅ Low Stock Alerts	Complete	Automated alert system
+✅ Responsive Design	Complete	Mobile-first approach
+✅ Authentication	Complete	Login/Logout functionality
 
-### `npm test`
+## 🎨 Tech Stack
+Technology	Version	Purpose
+React	18.2.0	Frontend library
+React Router DOM	6.14.2	Routing
+Tailwind CSS	3.3.0	Styling framework
+Axios	1.4.0	HTTP client
+Recharts	2.8.0	Data visualization
+React Hot Toast	2.4.1	Notifications
+React Icons	4.10.1	Icon library
+Vercel	-	Deployment platform
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting Started
+Prerequisites
+Node.js 16.14.0 or higher
 
-### `npm run build`
+npm 8.19.0 or higher
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Quick Installation
+Step 1: Clone Repository
+```
+git clone https://github.com/DarakshanSaara/inventory-frontend.git
+cd frontend
+```
+Step 2: Install Dependencies
+```
+npm install
+# or
+yarn install
+```
+Step 3: Configure Environment
+# Copy environment example file
+```
+cp .env.example .env.local
+```
+# Edit .env.local and set your API URL
+```
+nano .env.local
+```
+# Add: REACT_APP_API_URL=https://inventory-backend-aq7l.onrender.com/api
+Step 4: Start Development Server
+```
+npm start
+# or
+yarn start
+```
+Application will open at http://localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 Project Structure
+```
+frontend/
+│
+├── node_modules/
+│
+├── public/
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+│
+├── src/
+│   │
+│   ├── components/
+│   │   ├── Dashboard.jsx
+│   │   ├── Layout.jsx
+│   │   ├── Login.jsx
+│   │   ├── Register.jsx
+│   │   ├── Products.jsx
+│   │   ├── Reports.jsx
+│   │   ├── StockManagement.jsx
+│   │   └── Suppliers.jsx
+│   │
+│   ├── services/
+│   │   ├── api.js
+│   │   ├── stockApi.js
+│   │   └── supplierApi.js
+│   │
+│   ├── styles/
+│   │   └── App.css
+│   │
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+│
+├── .env
+├── .env.production
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── tailwind.config.js
+└── README.md
+```
+## 👨‍💻 Author
+Saara Darakshan
 
-### `npm run eject`
+GitHub: [@yourusername](https://github.com/DarakshanSaara)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Email: saaradarakshan56@gmail.com
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🌟 Features Implemented for Internship
+### Core Requirements ✅
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+User Authentication - Login/Logout with role-based access
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Dashboard - Real-time statistics and analytics
 
-## Learn More
+Product Management - Complete CRUD operations
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Supplier Management - Supplier information handling
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Stock Management - Stock in/out with transaction history
 
-### Code Splitting
+Reports & Analytics - Interactive charts and data visualization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Low Stock Alerts - Automated alert system
 
-### Analyzing the Bundle Size
+Responsive Design - Mobile-first, fully responsive UI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Technical Excellence ✅
 
-### Making a Progressive Web App
+Modern React - Functional components with hooks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+State Management - Context API for global state
 
-### Advanced Configuration
+API Integration - Axios with interceptors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Form Handling - React Hook Form with validation
 
-### Deployment
+Styling - Tailwind CSS with custom configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Error Handling - Comprehensive error boundaries
 
-### `npm run build` fails to minify
+Performance - Code splitting, lazy loading
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployment - CI/CD with Vercel
+
+### User Experience ✅
+
+Intuitive Navigation - Sidebar with active states
+
+Real-time Updates - Immediate feedback on actions
+
+Loading States - Skeleton loaders and spinners
+
+Error Messages - User-friendly error notifications
+
+Data Visualization - Charts for better insights
+
+Mobile Optimization - Touch-friendly interfaces
